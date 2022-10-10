@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!--
 robotiq-3f-gripper_finder_articulated_macro(prefix)
 
@@ -33,7 +34,14 @@ finger(i.e. finger_1, etc...).
                 <mass value="0.05"/>
                 <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
             </inertial>
-		</link>
+
+        </link>
+
+            <gazebo reference="${prefix}link_0">
+                <mu1>1.1</mu1>
+                <mu2>1.1</mu2>
+            </gazebo>
+
 		<link name="${prefix}link_1">
 			<visual>
 				<origin xyz="0.050 -.028 0" rpy="0 0 -0.52"/>
@@ -55,6 +63,13 @@ finger(i.e. finger_1, etc...).
                 <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024" />
             </inertial>
 		</link>
+
+
+            <gazebo reference="${prefix}link_1">
+                <mu1>1.1</mu1>
+                <mu2>1.1</mu2>
+            </gazebo>
+
 		<link name="${prefix}link_2">
 			<!--
 			NOTE: This link has an offset in the z-direction based on the models that were
@@ -81,6 +96,13 @@ finger(i.e. finger_1, etc...).
                 <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024" />
             </inertial>
 		</link>
+
+
+            <gazebo reference="${prefix}link_2">
+                <mu1>1.1</mu1>
+                <mu2>1.1</mu2>
+            </gazebo>
+
 		<link name="${prefix}link_3">
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0.52"/>
@@ -102,6 +124,11 @@ finger(i.e. finger_1, etc...).
                 <inertia ixx="0.001239" ixy="-0.000251" ixz="0.000019" iyy="0.00085" iyz="0" izz="0.001632" />
             </inertial>
 		</link>
+
+            <gazebo reference="${prefix}link_3">
+                <mu1>1.1</mu1>
+                <mu2>1.1</mu2>
+            </gazebo>
 
 		<!-- end of link list -->
 		<!-- joint list -->
@@ -127,5 +154,41 @@ finger(i.e. finger_1, etc...).
 			<limit lower="-1.2217" upper="-0.0523" effort="100" velocity="100"/>
 		</joint>
 		<!-- end of joint list -->
-	</xacro:macro>
+
+    	<!-- transmission list -->
+        <transmission name="${prefix}joint_1_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}joint_1">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}joint_1">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}joint_2_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}joint_2">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}joint_2">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}joint_3_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}joint_3">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}joint_3">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+
+    </xacro:macro>
 </robot>

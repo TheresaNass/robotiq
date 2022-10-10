@@ -4,27 +4,34 @@
 robotiq-3f-gripper_actuated_gazebo - actuated version of the robotiq robotiq-3f-gripper, 3 fingered gripper.
 -->
 <robot name="robotiq-3f-gripper_actuated_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
-    <xacro:include filename="$(find robotiq_3f_gripper_visualization)/cfg/robotiq_hand_macro.urdf.xacro" />
+    <xacro:include filename="$(find robotiq_3f_gripper_visualization)/cfg/robotiq-3f-gripper_articulated_macro.xacro" />
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" />
+    </gazebo>
 
     <link name="world"/>
 
-    <xacro:robotiq_hand prefix="" parent="world" reflect="">
-      <origin xyz="0 0 0.5" rpy="0 0 0"/>
-    </xacro:robotiq_hand>
+    <xacro:robotiq-3f-gripper_articulated prefix="s_model_"/>
+    <joint name="gripper_joint" type="fixed">
+        <parent link="world" />
+        <child link = "s_model_palm" />
+        <origin xyz="0.057 0.0 0.0" rpy="0.0 ${pi} ${-pi/2}" />
+    </joint>
 
-  <gazebo>
-    <!-- plugin for the RobotiQ hand -->
+<!--  <gazebo>
+    <!- - plugin for the RobotiQ hand - ->
     <plugin name="robotiq_hand_plugin" filename="libRobotiqHandPlugin.so">
       <kp_position>10.0</kp_position>
       <kd_position>0.5</kd_position>
-      <!-- Some optional parameters. Check the plugin header file for all of them. -->
-      <!--<prefix>pre_</prefix>-->
-      <!-- This is chosen, so it's compatible with the "Robotiq3FGripperSimpleController.py"-->
+      <!- - Some optional parameters. Check the plugin header file for all of them. - ->
+      <!- -<prefix>pre_</prefix>- ->
+      <!- - This is chosen, so it's compatible with the "Robotiq3FGripperSimpleController.py"- ->
       <topic_command>/Robotiq3FGripperRobotOutput</topic_command>
-      <!-- <topic_state>/hand/state</topic_state> -->
+      <!- - <topic_state>/hand/state</topic_state> - ->
 
     </plugin>
-  </gazebo>
+  </gazebo> -->
 </robot>
 
 
