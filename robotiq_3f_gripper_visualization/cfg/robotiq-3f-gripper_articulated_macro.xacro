@@ -35,25 +35,27 @@ there are multiple hands then a prefix followed by an "_" is needed.
 					<color rgba="0 1 1 1"/>
 				</material>
 			</collision>
-             <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1.3"/>
-            <inertia ixx="0.0035" ixy="0" ixz="-0" iyy="0.0035" iyz="0" izz="0.0035" />
-
+            <inertial>
+                <origin xyz="-0.0176262975 -0.0041752643 0.0000287824"/>
+                <mass value="1.3000000000"/>
+                <inertia ixx="0.0022857562" ixy="-0.0000228139" ixz="-0.0000000072" iyy="0.0028530547" iyz="0.0000000027" izz="0.0023702761"/>
             </inertial>
 		</link>
 
         <gazebo reference="${prefix}palm">
         <mu1>1.1</mu1>
         <mu2>1.1</mu2>
+        <material>Gazebo/Red</material>
+        <selfCollide>false</selfCollide>
         </gazebo>
 
-		<link name="${prefix}tool0"/>
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1.3"/>
-            <inertia ixx="0.006012" ixy="0.000079" ixz="-0.00024" iyy="0.012892" iyz="0" izz="0.002435" />
-        </inertial>
+		<link name="${prefix}tool0">
+            <inertial>
+                <origin xyz="-0.0176262975 -0.0041752643 0.0000287824"/>
+                <mass value="0.0010000000"/>
+                <inertia ixx="0.0000017583" ixy="-0.0000000175" ixz="-0.0000000000" iyy="0.0000021947" iyz="0.0000000000" izz="0.0000018233"/>
+            </inertial>
+        </link>
 		<!-- end of link list -->
 		<!-- joint list -->
 

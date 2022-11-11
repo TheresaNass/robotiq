@@ -56,7 +56,9 @@ def genCommand(char, command):
         command.rACT = 1
         command.rGTO = 1
         command.rSPA = 255
-        command.rFRA = 150
+        command.rFRA = 150 
+        command.rSPB = 255
+        command.rFRB = 150 
 
     if char == "r":
         command = Robotiq3FGripperRobotOutput()
@@ -80,6 +82,9 @@ def genCommand(char, command):
     if char == "s":
         command.rMOD = 3
 
+    if char == "u":
+        command.rICF = 1   # Activate individual control of a finger 
+        
     # If the command entered is a int, assign this value to rPRA
     try:
         command.rPRA = int(char)
@@ -110,6 +115,25 @@ def genCommand(char, command):
         if command.rFRA < 0:
             command.rFRA = 0
 
+    # Single Scissor Mode Controls
+  #  if char == "m":
+   #     command.rFRS -= 2
+
+    #    if command.rFRS < 0:
+     #       command.rFRS = 0
+    
+   # if char == "n":
+    #    command.rSPS -= 25
+     #   if command.rSPS < 0:
+      #      command.rSPS = 0
+    
+    #if char == "j":
+     #   command.rPRS -= 25
+      #  if command.rPRS < 0:
+       #     command.rPRS = 0
+
+
+
     return command
 
 
@@ -122,26 +146,26 @@ def askForCommand(command):
     currentCommand += ", rGTO = " + str(command.rGTO)
     currentCommand += ", rATR = " + str(command.rATR)
     ##    currentCommand += ', rGLV = ' + str(command.rGLV)
-    ##    currentCommand += ', rICF = ' + str(command.rICF)
-    ##    currentCommand += ', rICS = ' + str(command.rICS)
+    currentCommand += ", rICF = " + str(command.rICF) #Activation of individual finger control
+    currentCommand += ", rICS = " + str(command.rICS)
     currentCommand += ", rPRA = " + str(command.rPRA)
     currentCommand += ", rSPA = " + str(command.rSPA)
     currentCommand += ", rFRA = " + str(command.rFRA)
-
-    # We only show the simple control mode
-    ##    currentCommand += ', rPRB = ' + str(command.rPRB)
-    ##    currentCommand += ', rSPB = ' + str(command.rSPB)
-    ##    currentCommand += ', rFRB = ' + str(command.rFRB)
-    ##    currentCommand += ', rPRC = ' + str(command.rPRC)
-    ##    currentCommand += ', rSPC = ' + str(command.rSPC)
-    ##    currentCommand += ', rFRC = ' + str(command.rFRC)
+    
+        # We only show the simple control mode
+    currentCommand += ", rPRB = " + str(command.rPRB)
+    currentCommand += ', rSPB = ' + str(command.rSPB)
+    currentCommand += ', rFRB = ' + str(command.rFRB)
+    currentCommand += ', rPRC = ' + str(command.rPRC)
+    currentCommand += ', rSPC = ' + str(command.rSPC)
+    currentCommand += ', rFRC = ' + str(command.rFRC)
     ##    currentCommand += ', rPRS = ' + str(command.rPRS)
     ##    currentCommand += ', rSPS = ' + str(command.rSPS)
-    ##    currentCommand += ', rFRS = ' + str(command.rFRS)
+    currentCommand += ', rFRS = ' + str(command.rFRS)
 
     print(currentCommand)
 
-    strAskForCommand = "-----\nAvailable commands\n\n"
+    strAskForCommand = "-----\n Available commands\n\n"
     strAskForCommand += "r: Reset\n"
     strAskForCommand += "a: Activate\n"
     strAskForCommand += "c: Close\n"
@@ -155,7 +179,8 @@ def askForCommand(command):
     strAskForCommand += "l: Slower\n"
     strAskForCommand += "i: Increase force\n"
     strAskForCommand += "d: Decrease force\n"
-
+    strAskForCommand += "u: Single finger\n"
+    # strAskForCommand += "m: single scissor force\n"
     strAskForCommand += "-->"
 
     return input(strAskForCommand)
@@ -166,7 +191,7 @@ def publisher():
 
     rospy.init_node("Robotiq3FGripperSimpleController")
 
-    pub = rospy.Publisher("Robotiq3FGripperRobotOutput", Robotiq3FGripperRobotOutput)
+    pub = rospy.Publisher('Robotiq3FGripperRobotOutput', Robotiq3FGripperRobotOutput, queue_size=10)
 
     command = Robotiq3FGripperRobotOutput()
 

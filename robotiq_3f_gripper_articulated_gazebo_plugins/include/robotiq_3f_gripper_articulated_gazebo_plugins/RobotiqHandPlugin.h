@@ -66,7 +66,8 @@ class RobotiqHandPlugin : public gazebo::ModelPlugin
         ICS,
         ICF,
         ChangeModeInProgress,
-        Simplified
+        Simplified,
+        Normal
     };
 
     /// \brief Different grasping modes.

@@ -230,10 +230,10 @@ void RobotiqHandPlugin::SetHandleCommand(
 
     // Sanity check.
     if (!this->VerifyCommand(_msg))
-    {
+     {
         std::cerr << "Ignoring command" << std::endl;
         return;
-    }
+     }
 
     this->prevCommand = this->handleCommand;
 
@@ -340,7 +340,7 @@ void RobotiqHandPlugin::UpdateStates()
             }
             else if (this->handState != ChangeModeInProgress)
             {
-                this->handState = Simplified;
+                this->handState = Normal;
             }
 
             // Grasping mode initialized, let's change the state to Simplified Mode.
@@ -350,8 +350,8 @@ void RobotiqHandPlugin::UpdateStates()
 
                 // Restore the original command.
                 this->handleCommand = this->lastHandleCommand;
-                this->handState = Simplified;
-            }
+                this->handState = Normal;
+            } 
         }
 
         // Step 2: Actions in each state.
@@ -377,6 +377,7 @@ void RobotiqHandPlugin::UpdateStates()
                 {
                     // "Stop" action.
                     this->StopHand();
+              
                 }
                 break;
 
@@ -395,13 +396,23 @@ void RobotiqHandPlugin::UpdateStates()
                 this->handleCommand.rSPC = this->handleCommand.rSPA;
                 // Force.
                 this->handleCommand.rFRB = this->handleCommand.rFRA;
-                this->handleCommand.rFRC = this->handleCommand.rFRA;
+                this->handleCommand.rFRC = this->handleCommand.rFRA; 
 
                 if (this->handleCommand.rGTO == 0)
                 {
                     // "Stop" action.
                     this->StopHand();
                 }
+              
+            case Normal:
+                // Normal mode, so that fingers can be controlled individually.
+               
+               if (this->handleCommand.rGTO == 0)
+                {
+                    // "Stop" action.
+                    this->StopHand();
+                }
+
                 break;
 
             default:
@@ -699,6 +710,7 @@ void RobotiqHandPlugin::UpdatePIDControl(double _dt)
                             (215.0 / 255.0)
 #endif
                                      * this->handleCommand.rPRA / 255.0;
+                    
                     break;
             }
         }
@@ -716,6 +728,7 @@ void RobotiqHandPlugin::UpdatePIDControl(double _dt)
                                  (177.0 / 255.0)
 #endif
                                  * this->handleCommand.rPRA / 255.0;
+
             }
             else if (this->graspingMode == Scissor)
             {
@@ -731,7 +744,8 @@ void RobotiqHandPlugin::UpdatePIDControl(double _dt)
                 targetPose = this->joints[i]->GetLowerLimit(0).Radian() +
                              (this->joints[i]->GetUpperLimit(0).Radian() - this->joints[i]->GetLowerLimit(0).Radian())
 #endif
-                                                         * this->handleCommand.rPRA / 255.0;
+                                  * this->handleCommand.rPRA / 255.0;
+
             }
         }
 
