@@ -56,9 +56,9 @@ def genCommand(char, command):
         command.rACT = 1
         command.rGTO = 1
         command.rSPA = 255
-        command.rFRA = 150 
+        command.rFRA = 150
         command.rSPB = 255
-        command.rFRB = 150 
+        command.rFRB = 150
 
     if char == "r":
         command = Robotiq3FGripperRobotOutput()
@@ -83,8 +83,8 @@ def genCommand(char, command):
         command.rMOD = 3
 
     if char == "u":
-        command.rICF = 1   # Activate individual control of a finger 
-        
+        command.rICF = 1   # Activate individual control of a finger
+
     # If the command entered is a int, assign this value to rPRA
     try:
         command.rPRA = int(char)
@@ -151,7 +151,7 @@ def askForCommand(command):
     currentCommand += ", rPRA = " + str(command.rPRA)
     currentCommand += ", rSPA = " + str(command.rSPA)
     currentCommand += ", rFRA = " + str(command.rFRA)
-    
+
         # We only show the simple control mode
     currentCommand += ", rPRB = " + str(command.rPRB)
     currentCommand += ', rSPB = ' + str(command.rSPB)

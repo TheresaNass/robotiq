@@ -1,0 +1,465 @@
+<?xml version="1.0" ?> 
+<!--
+robotiq-3f-gripper_contact-sensors_macro
+
+Creates contact sensors.
+
+-->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+        <xacro:macro name="robotiq-3f-gripper_contact-sensors" params="prefix">
+
+            <!-- sensor link list -->
+		<!-- sensor finger 1 link 1-->
+        <link name="s_model_finger_1_link_1_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.03 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_1_link_1_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.01 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_1_link_1_sensor">
+            <sensor type="contact" name="s_model_finger_1_link_1_sensor">
+                <contact>
+                    <collision>s_model_finger_1_link_1_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_1_link_1_sensor</bumperTopicName>
+                    <frameName>s_model_finger_1_link_1</frameName>
+                </plugin>
+            </sensor>
+        </gazebo> 
+		<!-- end of finger 1 sensor link 1-->
+
+		<!-- finger 1 sensor link 2-->
+		<link name="s_model_finger_1_link_2_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_1_link_2_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_1_link_2_sensor">
+            <sensor type="contact" name="s_model_finger_1_link_2_sensor">
+                <contact>
+                    <collision>s_model_finger_1_link_2_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_1_link_2_sensor</bumperTopicName>
+                    <frameName>s_model_finger_1_link_2</frameName>
+                </plugin>
+            </sensor>
+        </gazebo>
+		<!-- end of sensor link 2-->
+
+		<!-- finger 1 sensor link 3-->
+		<link name="s_model_finger_1_link_3_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_1_link_3_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_1_link_3_sensor">
+            <sensor type="contact" name="s_model_finger_1_link_3_sensor">
+                <contact>
+                    <collision>s_model_finger_1_link_3_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_1_link_3_sensor</bumperTopicName>
+                    <frameName>s_model_finger_1_link_3</frameName>
+                </plugin>
+            </sensor>
+        </gazebo>
+		<!-- end of finger 1 sensor link 3-->
+
+		<!-- sensor finger 2 link 1-->
+        <link name="s_model_finger_2_link_1_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.03 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_2_link_1_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.01 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_2_link_1_sensor">
+            <sensor type="contact" name="s_model_finger_2_link_1_sensor">
+                <contact>
+                    <collision>s_model_finger_2_link_1_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_2_link_1_sensor</bumperTopicName>
+                    <frameName>s_model_finger_2_link_1</frameName>
+                </plugin>
+            </sensor>
+        </gazebo> 
+		<!-- end of finger 2 sensor link 1-->
+
+		<!-- sensor finger 2 link 2-->
+        <link name="s_model_finger_2_link_2_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.03 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_2_link_2_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.01 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_2_link_2_sensor">
+            <sensor type="contact" name="s_model_finger_2_link_2_sensor">
+                <contact>
+                    <collision>s_model_finger_2_link_2_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_2_link_2_sensor</bumperTopicName>
+                    <frameName>s_model_finger_2_link_2</frameName>
+                </plugin>
+            </sensor>
+        </gazebo> 
+		<!-- end of finger 2 sensor link 2-->
+
+		<!-- finger 2 sensor link 3-->
+		<link name="s_model_finger_2_link_3_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_2_link_3_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_2_link_3_sensor">
+            <sensor type="contact" name="s_model_finger_2_link_3_sensor">
+                <contact>
+                    <collision>s_model_finger_2_link_3_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_2_link_3_sensor</bumperTopicName>
+                    <frameName>s_model_finger_2_link_3</frameName>
+                </plugin>
+            </sensor>
+        </gazebo>
+		<!-- end of finger 2 sensor link 3-->
+		
+		<!-- sensor finger middle link 1-->
+        <link name="s_model_finger_middle_link_1_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.03 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_middle_link_1_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.01 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_middle_link_1_sensor">
+            <sensor type="contact" name="s_model_finger_middle_link_1_sensor">
+                <contact>
+                    <collision>s_model_finger_middle_link_1_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_middle_link_1_sensor</bumperTopicName>
+                    <frameName>s_model_finger_middle_link_1</frameName>
+                </plugin>
+            </sensor>
+        </gazebo> 
+		<!-- end of finger 3 sensor link 1-->
+
+		<!-- sensor finger middle link 2-->
+        <link name="s_model_finger_middle_link_2_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.03 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_middle_link_2_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.01 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_middle_link_2_sensor">
+            <sensor type="contact" name="s_model_finger_middle_link_2_sensor">
+                <contact>
+                    <collision>s_model_finger_middle_link_2_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_middle_link_2_sensor</bumperTopicName>
+                    <frameName>s_model_finger_middle_link_2</frameName>
+                </plugin>
+            </sensor>
+        </gazebo> 
+		<!-- end of finger middle sensor link 2-->
+
+		<!-- finger middle sensor link 3-->
+		<link name="s_model_finger_middle_link_3_sensor">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </visual>
+            <collision name="s_model_finger_middle_link_3_collision">
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.02 0.0001 0.02" />
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <mass value="0.001"/>
+                <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001" />
+            </inertial>
+        </link>
+
+        <gazebo reference="s_model_finger_middle_link_3_sensor">
+            <sensor type="contact" name="s_model_finger_middle_link_3_sensor">
+                <contact>
+                    <collision>s_model_finger_middle_link_3_collision_collision_1</collision>
+                </contact>
+                <!-- ROS Plugin - so that contact data is published onto a rostopic-->
+                <plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>10</updateRate>
+                    <bumperTopicName>s_model_finger_middle_link_3_sensor</bumperTopicName>
+                    <frameName>s_model_finger_middle_link_3</frameName>
+                </plugin>
+            </sensor>
+        </gazebo>
+		<!-- end of finger middle sensor link 3-->
+
+        <!-- end of link list -->
+		
+		<!-- sensor joint list -->
+        <joint name="s_model_finger_1_link_1_sensor_joint" type="fixed">
+            <parent link="s_model_finger_1_link_1"/>
+            <child link="s_model_finger_1_link_1_sensor"/>
+            <!-- <origin xyz="0.020 0 0" rpy="0 0 0"/> -->
+			<origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> 
+        </joint> 
+
+		<joint name="s_model_finger_1_link_2_sensor_joint" type="fixed">
+            <parent link="s_model_finger_1_link_2"/>
+            <child link="s_model_finger_1_link_2_sensor"/>
+            <!-- <origin xyz="0.020 0 0" rpy="0 0 0"/> -->
+			<origin xyz="0.02 0.008 0" rpy="0 0 0.015"/>
+        </joint> 
+
+		<joint name="s_model_finger_1_link_3_sensor_joint" type="fixed">
+            <parent link="s_model_finger_1_link_3"/>
+            <child link="s_model_finger_1_link_3_sensor"/>
+            <!-- <origin xyz="0.020 0 0" rpy="0 0 0"/> -->
+			<!-- <origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> -->
+			<origin xyz="0.018 0.0198 0" rpy="0 0 0.51"/>
+        </joint> 
+
+
+		<joint name="s_model_finger_2_link_1_sensor_joint" type="fixed">
+            <parent link="s_model_finger_2_link_1"/>
+            <child link="s_model_finger_2_link_1_sensor"/>
+			<origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> 
+        </joint> 
+
+		<joint name="s_model_finger_2_link_2_sensor_joint" type="fixed">
+            <parent link="s_model_finger_2_link_2"/>
+            <child link="s_model_finger_2_link_2_sensor"/>
+			<origin xyz="0.02 0.008 0" rpy="0 0 0.015"/> 
+        </joint> 
+
+		<joint name="s_model_finger_2_link_3_sensor_joint" type="fixed">
+            <parent link="s_model_finger_2_link_3"/>
+            <child link="s_model_finger_2_link_3_sensor"/>
+			<origin xyz="0.018 0.0198 0" rpy="0 0 0.51"/>
+        </joint> 
+
+		<joint name="s_model_finger_middle_link_1_sensor_joint" type="fixed">
+            <parent link="s_model_finger_middle_link_1"/>
+            <child link="s_model_finger_middle_link_1_sensor"/>
+			<origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> 
+        </joint> 
+
+		<joint name="s_model_finger_middle_link_2_sensor_joint" type="fixed">
+            <parent link="s_model_finger_middle_link_2"/>
+            <child link="s_model_finger_middle_link_2_sensor"/>
+			<origin xyz="0.02 0.008 0" rpy="0 0 0.015"/> 
+        </joint> 
+
+		<joint name="s_model_finger_middle_link_3_sensor_joint" type="fixed">
+            <parent link="s_model_finger_middle_link_3"/>
+            <child link="s_model_finger_middle_link_3_sensor"/>
+			<origin xyz="0.018 0.0198 0" rpy="0 0 0.51"/>
+        </joint> 
+        <!-- end of sensor joint list-->
+
+</xacro:macro>
+</robot>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
