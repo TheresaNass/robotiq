@@ -46,7 +46,8 @@ finger(i.e. finger_1, etc...).
 			<collision name="collision_link_1">
 				<origin xyz="0.050 -.028 0" rpy="0 0 -0.52"/>
 				<geometry>
-                                        <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/collision/link_1.STL" />
+                                        <!-- <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/collision/link_1.STL" /> -->
+										<mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/visual/link_1.dae" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
@@ -72,7 +73,8 @@ finger(i.e. finger_1, etc...).
 			<collision>
 				<origin xyz="0.039 0 0.0075" rpy="0 0 0"/>
 				<geometry>
-                                        <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/collision/link_2.STL" />
+                                        <!-- <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/collision/link_2.STL" /> -->
+										<mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/visual/link_2.dae" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
@@ -93,7 +95,8 @@ finger(i.e. finger_1, etc...).
 			<collision>
 				<origin xyz="0 0 0" rpy="0 0 0.52"/>
 				<geometry>
-                                        <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/collision/link_3.STL" />
+                                      <!--  <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/collision/link_3.STL" /> -->
+									  <mesh filename="package://robotiq_3f_gripper_visualization/meshes/robotiq-3f-gripper_articulated/visual/link_3.dae" />
 				</geometry>
 				<material name="yellow"/>
 			</collision>
@@ -112,7 +115,7 @@ finger(i.e. finger_1, etc...).
 			<axis xyz="0 0 1"/>
 			<origin xyz="0.020 0 0" rpy="0 0 0"/>
       <!-- fnh: velocity=100 is far too fast. We also want some damping for Gazebo -->
-			<limit lower="0.0495" upper="1.2218" effort="100" velocity="1.23"/>
+			<limit lower="0.0495" upper="1.2218" effort="90" velocity="1.23"/>
       <dynamics friction="0.1" damping="1"/>
 		</joint>
 		<joint name="${prefix}joint_2" type="revolute">
@@ -120,7 +123,7 @@ finger(i.e. finger_1, etc...).
 			<child link="${prefix}link_2"/>
 			<axis xyz="0 0 1"/>
 			<origin xyz="0.050 -.028 0" rpy="0 0 -0.52"/>
-			<limit lower="0.0" upper="1.5708" effort="100" velocity="1.24"/>
+			<limit lower="0.0" upper="1.5708" effort="90" velocity="1.24"/>
       <dynamics friction="0.1" damping="1"/>
 		</joint>
 		<joint name="${prefix}joint_3" type="revolute">
@@ -128,7 +131,7 @@ finger(i.e. finger_1, etc...).
 			<child link="${prefix}link_3"/>
 			<axis xyz="0 0 1"/>
 			<origin xyz="0.039 0 0" rpy="0 0 0"/>
-			<limit lower="-1.2217" upper="-0.0523" effort="100" velocity="1.25"/>
+			<limit lower="-1.2217" upper="-0.0523" effort="90" velocity="1.25"/>
       <dynamics friction="0.1" damping="1"/>
 		</joint>
 

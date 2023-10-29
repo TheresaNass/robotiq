@@ -14,13 +14,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.03 0.0001 0.02" />
+                    <box size="0.04 0.001 0.03" /> <!--0.027-->
                 </geometry>
             </visual>
             <collision name="s_model_finger_1_link_1_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.01 0.02" />
+                    <box size="0.04 0.001 0.03" />
                 </geometry>
             </collision>
             <inertial>
@@ -51,13 +51,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.033 0.001 0.03" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_1_link_2_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.033 0.001 0.03" />
                 </geometry>
             </collision>
             <inertial>
@@ -88,13 +88,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.02 0.001 0.025" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_1_link_3_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.02 0.001 0.025" />
                 </geometry>
             </collision>
             <inertial>
@@ -125,13 +125,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.03 0.0001 0.02" />
+                    <box size="0.04 0.001 0.03" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_2_link_1_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.01 0.02" />
+                    <box size="0.04 0.001 0.03" />
                 </geometry>
             </collision>
             <inertial>
@@ -162,13 +162,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.03 0.0001 0.02" />
+                    <box size="0.033 0.001 0.03" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_2_link_2_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.01 0.02" />
+                    <box size="0.033 0.001 0.03" />
                 </geometry>
             </collision>
             <inertial>
@@ -199,13 +199,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.02 0.001 0.025" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_2_link_3_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.02 0.001 0.025" />
                 </geometry>
             </collision>
             <inertial>
@@ -236,13 +236,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.03 0.0001 0.02" />
+                    <box size="0.04 0.001 0.03" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_middle_link_1_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.01 0.02" />
+                    <box size="0.04 0.001 0.03" />
                 </geometry>
             </collision>
             <inertial>
@@ -273,13 +273,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.03 0.0001 0.02" />
+                    <box size="0.033 0.001 0.03" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_middle_link_2_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.01 0.02" />
+                    <box size="0.033 0.001 0.03" />
                 </geometry>
             </collision>
             <inertial>
@@ -310,13 +310,13 @@ Creates contact sensors.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.02 0.001 0.025" />
                 </geometry>
             </visual>
             <collision name="s_model_finger_middle_link_3_collision">
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.02 0.0001 0.02" />
+                    <box size="0.02 0.001 0.025" />
                 </geometry>
             </collision>
             <inertial>
@@ -349,14 +349,14 @@ Creates contact sensors.
             <parent link="s_model_finger_1_link_1"/>
             <child link="s_model_finger_1_link_1_sensor"/>
             <!-- <origin xyz="0.020 0 0" rpy="0 0 0"/> -->
-			<origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> 
+			<origin xyz="0.04 -0.014 0" rpy="0 0 -0.52"/> 
         </joint> 
 
 		<joint name="s_model_finger_1_link_2_sensor_joint" type="fixed">
             <parent link="s_model_finger_1_link_2"/>
             <child link="s_model_finger_1_link_2_sensor"/>
             <!-- <origin xyz="0.020 0 0" rpy="0 0 0"/> -->
-			<origin xyz="0.02 0.008 0" rpy="0 0 0.015"/>
+			<origin xyz="0.022 0.0075 0" rpy="0 0 0.0"/>
         </joint> 
 
 		<joint name="s_model_finger_1_link_3_sensor_joint" type="fixed">
@@ -364,44 +364,44 @@ Creates contact sensors.
             <child link="s_model_finger_1_link_3_sensor"/>
             <!-- <origin xyz="0.020 0 0" rpy="0 0 0"/> -->
 			<!-- <origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> -->
-			<origin xyz="0.018 0.0198 0" rpy="0 0 0.51"/>
+			<origin xyz="0.0181 0.0196 0" rpy="0 0 0.505"/>
         </joint> 
 
 
 		<joint name="s_model_finger_2_link_1_sensor_joint" type="fixed">
             <parent link="s_model_finger_2_link_1"/>
             <child link="s_model_finger_2_link_1_sensor"/>
-			<origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> 
+			<origin xyz="0.04 -0.014 0" rpy="0 0 -0.52"/> 
         </joint> 
 
 		<joint name="s_model_finger_2_link_2_sensor_joint" type="fixed">
             <parent link="s_model_finger_2_link_2"/>
             <child link="s_model_finger_2_link_2_sensor"/>
-			<origin xyz="0.02 0.008 0" rpy="0 0 0.015"/> 
+			<origin xyz="0.022 0.0075 0" rpy="0 0 0.0"/>
         </joint> 
 
 		<joint name="s_model_finger_2_link_3_sensor_joint" type="fixed">
             <parent link="s_model_finger_2_link_3"/>
             <child link="s_model_finger_2_link_3_sensor"/>
-			<origin xyz="0.018 0.0198 0" rpy="0 0 0.51"/>
+			<origin xyz="0.0181 0.0196 0" rpy="0 0 0.505"/>
         </joint> 
 
 		<joint name="s_model_finger_middle_link_1_sensor_joint" type="fixed">
             <parent link="s_model_finger_middle_link_1"/>
             <child link="s_model_finger_middle_link_1_sensor"/>
-			<origin xyz="0.04 -0.0127 0" rpy="0 0 -0.61"/> 
+			<origin xyz="0.04 -0.014 0" rpy="0 0 -0.52"/> 
         </joint> 
 
 		<joint name="s_model_finger_middle_link_2_sensor_joint" type="fixed">
             <parent link="s_model_finger_middle_link_2"/>
             <child link="s_model_finger_middle_link_2_sensor"/>
-			<origin xyz="0.02 0.008 0" rpy="0 0 0.015"/> 
+			<origin xyz="0.022 0.0075 0" rpy="0 0 0.0"/>
         </joint> 
 
 		<joint name="s_model_finger_middle_link_3_sensor_joint" type="fixed">
             <parent link="s_model_finger_middle_link_3"/>
             <child link="s_model_finger_middle_link_3_sensor"/>
-			<origin xyz="0.018 0.0198 0" rpy="0 0 0.51"/>
+			<origin xyz="0.0181 0.0196 0" rpy="0 0 0.505"/>
         </joint> 
         <!-- end of sensor joint list-->
 
